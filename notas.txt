@@ -1,0 +1,4 @@
+agregue a los 5html un meta viewort
+agregue un meta description a los 5html
+agregue una titulo  a de todos los html y los modifique en el scss
+modifique los titles de tods los html agregando el nombre de la pagina

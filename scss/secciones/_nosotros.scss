@@ -1,0 +1,119 @@
+.nosotros {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    grid-template-areas:
+    "header"
+    "titulo"
+    "centro"
+    "footer ";
+    background-image:url(https://res.cloudinary.com/dai0nag2c/image/upload/v1656525083/primer%20sitio%20web/9818aef5644c2227aa7e7545854efc7c_aa9mjg.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+
+    .titulo{
+        @extend %tamañodetitulo;
+
+        .animate__animated.animate__fadeIn {
+            --animate-duration: 2.5s;
+          }
+
+        h1{
+           color: rgb(167, 167, 167);
+           font-family:$titulo;
+        }
+        
+    }
+
+    .centro{
+        grid-area: centro;
+        display: flex;
+        min-height: 75vh;
+        justify-content: space-around;
+        align-items: center;
+        margin:40px 0px 50px 0px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .informacion{
+            @include color(rgba(22, 22, 22, 0.664),rgb(255, 255, 255));
+            text-align: center;
+            padding: 60px 35px 60px 35px;
+            animation-name: cambioancho;
+            animation-duration: 3s;
+
+            h2{
+                font-family:$titulo;
+            }
+
+            p{
+                font-family:$descripcion;
+                font-size: 18px;
+                width: 240px;
+            }         
+        }
+    }
+ }
+
+@keyframes cambioancho {
+    0%{
+       width: 310px; 
+    }
+    100%{
+        width: 250px;
+    }
+}
+
+@media (max-width:779px){   
+.nosotros{  
+
+    .centro {
+        flex-direction: column;
+
+        .informacion{
+            margin-bottom: 25px; 
+            width: 250px;
+            animation-name:none;
+
+            h2{
+                font-size: 20px;
+            }
+
+            p{
+                font-size: 18px;
+            }
+        }
+    } 
+} 
+}
+
+@media (max-width:385px){
+   .nosotros{
+
+        .titulo{
+
+            h1{
+              font-size: 25px;
+            }
+        }
+        .centro{
+
+            .informacion{
+                margin-bottom: 25px; 
+                width: 220px;
+                height: 200px;
+                animation-name:none;
+    
+                h2{
+                    font-size: 18px;
+                }
+    
+                p{
+                    width: 220px;
+                    height: 200px;
+                    font-size: 17px;
+                }
+            }
+        }
+    }    
+}

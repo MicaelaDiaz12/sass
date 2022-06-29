@@ -1,0 +1,129 @@
+.inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header header header header"
+        "titulo titulo titulo titulo"
+        "innew innew innew innew"
+        "articulos articulos articulos articulos "
+        "footer footer footer footer";
+    background-image: url(https://res.cloudinary.com/dai0nag2c/image/upload/v1656442846/primer%20sitio%20web/jkll._e7fddf.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+
+    .titulo {
+        grid-area: titulo;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        height: 60vh;
+        width: 100%;
+        font-size: 4rem;
+
+        h1{
+            margin: 100px;
+        }
+
+        .animate__animated.animate__fadeIn {
+            --animate-duration: 5.5s;
+        }
+    }
+
+    .innew {
+        grid-area: innew;
+        margin-top: 155px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .articulos {
+        grid-area: articulos;
+        display: flex;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        img{
+            &:hover {
+            transition: .9s;
+            transform: scale(1.1);
+            }  
+        }     
+    }
+}
+
+@media (max-width:779px){
+    .inicio{
+        background-image: url(https://res.cloudinary.com/dai0nag2c/image/upload/v1656442524/primer%20sitio%20web/fondocel._ascsm0.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+
+        .titulo{
+
+            h1{
+                font-size: 60px; 
+            }
+        }
+
+        .innew{
+            margin-top: 30px;
+        }
+
+        .articulos {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 30px 0px 30px 0px;
+
+            img {
+                width: 220px;
+                height: 220px;
+                margin: 20px;
+            }
+        }
+    }
+} 
+@media(max-width:520px){
+    .inicio{
+
+        .innew{
+            margin: 0px;
+        }
+
+        .articulos {
+
+            img {
+                width: 180px;
+                height: 180px;
+                margin: 5px
+
+            }
+        }
+    }
+}
+@media(max-width:375px){
+
+    .inicio{
+        height: 280px;
+
+        .titulo{
+            height: 48vh;
+
+            h1{
+                margin: 80px;
+                font-size:40px ;
+            }
+        }
+
+        .articulos {
+
+            img {
+                width: 150px;
+                height: 150px;
+                margin: 5px
+            }
+        }    
+    }
+}

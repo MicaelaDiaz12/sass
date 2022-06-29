@@ -1,0 +1,129 @@
+.tienda {
+    display: grid;
+    grid-template-rows: 0fr 0fr 1fr 0fr;
+    grid-template-columns: 0.9fr 0.9fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header header header header"
+        "titulo titulo titulo titulo"
+        "menu prendas prendas prendas"
+        "footer footer footer footer";
+
+        .titulo{
+            @extend %tamañodetitulo;
+
+            .animate__animated.animate__fadeIn {
+                --animate-duration: 2.5s;
+              }
+    
+            h1{
+               color: rgb(0, 0, 0);
+               font-family:$titulo;
+            }
+            
+        }
+
+    .menu {
+        background-color: rgb(230, 230, 230);
+        grid-area: menu;
+        border: solid 1px rgb(168, 167, 167);
+        padding: 20px;
+        width: 205px;
+        height: 400px;
+        margin: 50px 0px 0px 25px;
+
+        h3 {
+            padding-bottom: 15px;
+            font-family: $titulo;
+        }
+
+        li {
+           list-style: none;
+           margin: 5px;
+        
+            a {
+               color: black;
+               text-decoration: none;
+               width: 90px;
+            }
+        }
+    }
+
+    .prendas {
+        grid-area: prendas;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 50px 0px 35px 15px;
+        font-family: $titulo;
+
+        .producto {
+            border: solid 0.5px rgb(209, 209, 209);
+            margin-bottom: 25px;
+            transition: all 1.5s;
+
+            &:hover {
+                transition: 0.7s;
+                transform: scale(1.1);
+            } 
+
+            a {
+               color: black;
+               text-decoration: none;
+            }
+
+            h3 {
+               margin: 15px;
+               
+            }
+
+              h4 {
+               margin: 0px 0px 15px 15px;
+            }
+            
+        }
+    }
+}
+
+@media (max-width:779px){
+    .tienda{
+
+        .menu{
+            border: none;
+            width: 70px;
+            margin-top: 50px;
+            margin-left: 0px;
+            padding: 15px 0px 0px 15px;
+            background: none;
+
+            li{
+                list-style: none;
+            }
+
+        }
+        .prendas{
+
+            margin-left: 0px;
+
+            .producto{
+                width: 150px;
+                justify-content: space-evenly;
+                margin: 5px;
+
+                img{
+                    width: 150px;
+                }
+
+                h3{
+                    margin: 9px;
+                    font-size: 12px; 
+                }
+
+                h4{
+                    font-size: 10px;
+                }
+
+            }    
+        }    
+    }
+}

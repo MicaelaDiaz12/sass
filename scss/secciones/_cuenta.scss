@@ -1,0 +1,143 @@
+.seccion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header"
+        "titulo"
+        "formulario "
+        "footer ";
+    background-color: rgb(212, 163, 183);
+
+    .titulo{
+        @extend %tamañodetitulo;
+
+        .animate__animated.animate__fadeIn {
+            --animate-duration: 2.5s;
+          }
+
+        h1{
+           color: aliceblue;
+           font-family:$titulo;
+        }
+        
+    }
+
+    .formulario {
+        grid-area: formulario;
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        form {
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.429);
+            padding: 86px 137px 86px 137px;
+            border: none;
+            animation-name: cambiodeancho;
+
+            ul{
+
+                li{
+                    margin: 5px;
+               
+                    a{
+                        text-decoration: none;
+                        color: aliceblue;
+                    }  
+                }
+            }   
+
+            input {
+                margin: 5px;
+                border: none;
+                width: 250px;
+                height: 30px;
+                outline: none;
+                animation-duration: 5s;
+                transition: all 2s;
+                animation-name: cambiodeancho;
+
+                &:hover {
+                    transition: .9s;
+                    transform: scale(1.1);
+                }
+            }    
+        }  
+    }
+}
+
+@keyframes cambiodeancho {
+
+    0% {
+        width: 350px;
+    }
+
+    50%{
+        width:300px;
+    }
+
+    100% {
+        width: 250px;
+    }
+}    
+
+@media (max-width:779px){
+    .seccion{
+
+        .formulario{
+
+            form {
+                padding: 70px 120px 70px 120px;
+
+                input{
+                    width: 200px;
+                    height: 30px;
+                }
+            }    
+        }    
+    }
+}
+
+@media (max-width:425px){
+    .seccion{
+
+        .titulo{
+
+            h1{
+                font-size: 25px ;
+            }
+        }
+
+        .formulario{
+             height: 80vh;
+
+            form {
+                padding: 90px 70px 90px 70px;
+
+                input{
+                    width: 200px;
+                    height: 25px;
+                }
+            }    
+        }    
+    }
+}
+
+@media (max-width:360px){
+    .seccion{
+
+        .formulario{
+
+            form {
+                padding: 70px 50px 70px 50px;
+
+                input{
+                    width: 200px;
+                    height: 25px;
+                }
+            }    
+        }    
+    }
+}
